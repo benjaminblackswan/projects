@@ -1,3 +1,6 @@
+# duration is now in seconds
+# datestr is now dateandtime in datetime data type
+
 import pyodbc
 import cv2
 from pathlib import Path
