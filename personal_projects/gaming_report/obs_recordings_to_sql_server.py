@@ -30,8 +30,8 @@ IF OBJECT_ID(N'gaming.daily', N'U') IS NULL
 BEGIN
     CREATE TABLE gaming.daily (
         dateandtime DATETIME,
-        PlayID NVARCHAR(5),
-        Duration DECIMAL(10,3)
+        PlayID VARCHAR(5),
+        Duration TINYINT
     )
 END
 """)
