@@ -13,3 +13,11 @@ After the completion of each game, the recordings are then organised into folder
 <img width="536" height="401" alt="image" src="https://github.com/user-attachments/assets/67fde0fe-21ba-44dd-9e03-6c0afb7e4baf" />
 
 Python is used to 
+
+
+
+# Final product
+
+https://app.powerbi.com/view?r=eyJrIjoiZWYyZGYyOTgtMmE1ZC00MmZlLTkxODUtZTEzMGM3YmM0ZmQ3IiwidCI6IjM4Zjk1YWI4LWJkYTYtNDg4MC1iMjg0LWMzYWMwMzAyMzgzYSJ9
+
+<img width="2054" height="1220" alt="image" src="https://github.com/user-attachments/assets/db6c88c2-be31-43d2-b617-b8781eb48ecf" />
