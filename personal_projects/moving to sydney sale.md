@@ -1,5 +1,4 @@
-# Moving Sale, everything must go
-# Unit 130, 56 Forbes Ph: 0431699336
+Moving Sale, everything must go, Unit 130, 56 Forbes Ph: 0431699336
 
 ## Furnitures
 ### Chin up bar stand - Free
