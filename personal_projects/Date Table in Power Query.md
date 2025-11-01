@@ -11,7 +11,7 @@ order by DateID
 ```
 
 
-Dax
+M
 ```
 let
     Source = Sql.Database("legion", "Ben", [Query="select *#(lf), right(EpYear, 2) + 'F' + format(ceiling(WeekNoCurrentYear/2), '00') as FortnightLabel#(lf), 'Week ' + cast(WeekNoCurrentYear as varchar(2)) as WeekNum#(lf)from [Ben].[dbo].[DateTable]#(lf)where EpYear = 2025#(lf)order by DateID"]),
