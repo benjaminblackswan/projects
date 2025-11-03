@@ -4,7 +4,7 @@ Moving Sale, everything must go, Unit 130, 56 Forbes Ph: 0431699336
 ### ~~F01. Chin up bar stand - Free (Gone)~~
 <img width="156" height="1167" alt="image" src="https://github.com/user-attachments/assets/d3ab8c60-098d-4998-a647-c1f3e7a21e6a" />
 
-### F02. Tallboy / Dresser  - Free
+### ~~F02. Tallboy / Dresser  - Free~~
 <img width="191" height="632" alt="image" src="https://github.com/user-attachments/assets/b7591f6e-c7a6-483f-9437-55713abcede1" />
 
 
@@ -14,7 +14,7 @@ Moving Sale, everything must go, Unit 130, 56 Forbes Ph: 0431699336
 
 ## Electronics
 
-### E01. Edifier R1280DB Bluetooth speakers - $65 ([$199 retail](https://www.jbhifi.com.au/products/edifier-r1280db-powered-bluetooth-bookshelf-speakers-black))
+### ~~E01. Edifier R1280DB Bluetooth speakers - $65~~ ([$199 retail](https://www.jbhifi.com.au/products/edifier-r1280db-powered-bluetooth-bookshelf-speakers-black))
 Used less than 3 hours, basically brand new
 
 <img width="351" height="603" alt="image" src="https://github.com/user-attachments/assets/17f1ec9a-633c-48aa-8627-19f5ddde28c5" />
