@@ -17,28 +17,30 @@ conn = pyodbc.connect(
 )
 cursor = conn.cursor()
 
+# define source and destination variables
+video_folder_path = Path(r"D:\2025")
+schema_name = "gaming"  # Change this to use a different schema
+table_name = "daily2"   # Change this to use a different table
+
 # --- Ensure schema exists ---
-cursor.execute("""
-IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = 'gaming')
-    EXEC('CREATE SCHEMA gaming')
+cursor.execute(f"""
+IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = '{schema_name}')
+    EXEC('CREATE SCHEMA {schema_name}')
 """)
 conn.commit()
 
 # --- Ensure table exists ---
-cursor.execute("""
-IF OBJECT_ID(N'gaming.daily', N'U') IS NULL
+cursor.execute(f"""
+IF OBJECT_ID(N'{schema_name}.{table_name}', N'U') IS NULL
 BEGIN
-    CREATE TABLE gaming.daily (
+    CREATE TABLE {schema_name}.{table_name} (
         dateandtime DATETIME,
         PlayID VARCHAR(5),
-        Duration TINYINT
+        DurationSecond TINYINT
     )
 END
 """)
 conn.commit()
-
-# --- Video folder path ---
-video_folder_path = Path(r"D:")
 
 video_files = sorted([f for f in video_folder_path.rglob("*")
                       if f.suffix.lower() in ['.mp4', '.mov', '.avi', '.mkv']])
@@ -52,7 +54,7 @@ for video in video_files:
     try:
         fps = cap.get(cv2.CAP_PROP_FPS)
         frame_count = cap.get(cv2.CAP_PROP_FRAME_COUNT)
-        duration_seconds = round(frame_count / fps, 3) if fps else 0
+        duration_seconds = int(round(frame_count / fps)) if fps else 0  # Convert to integer
 
         # Extract date and time from filename (format: YYYY-MM-DD_HH.MM.SS GM)
         date_time_match = re.search(r'(\d{4}-\d{2}-\d{2})_(\d{2}\.\d{2}\.\d{2})', video.stem)
@@ -68,15 +70,15 @@ for video in video_files:
         # Use first 5 characters of parent folder as PlayID
         play_id = video.parent.name[:5]
 
-        # Insert if not exists
-        cursor.execute("""
-        INSERT INTO gaming.daily (dateandtime, PlayID, Duration)
+        # Insert if not exists (check only dateandtime)
+        cursor.execute(f"""
+        INSERT INTO {schema_name}.{table_name} (dateandtime, PlayID, DurationSecond)
         SELECT ?, ?, ?
         WHERE NOT EXISTS (
-            SELECT 1 FROM gaming.daily
-            WHERE dateandtime = ? AND PlayID = ? AND Duration = ?
+            SELECT 1 FROM {schema_name}.{table_name}
+            WHERE dateandtime = ?
         )
-        """, dateandtime, play_id, duration_seconds, dateandtime, play_id, duration_seconds)
+        """, dateandtime, play_id, duration_seconds, dateandtime)
 
         if cursor.rowcount == 0:
             skipped_count += 1
