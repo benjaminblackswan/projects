@@ -2,7 +2,17 @@
 
 ## Background
 
-### Data generation
+### Step 1. Preparation
+
+Moving all gaming OBS recordings to S:\OBS recordings\Gaming, each game in its own folder, starting with the Playthrough ID.
+
+<img width="288" height="120" alt="image" src="https://github.com/user-attachments/assets/4b2505e2-9748-4f57-ad93-8761aba12cd6" />
+
+Combine the videos and upload to Youtube
+
+Copy the Youtube URL or Youtube playlist URL (if the game playthrough is longer than 12 hours)
+
+## Step 1. Data generation
 
 Everytime I play a game, I record the gaming session using OBS, the recorded file contains date and time information in the file name and other information are contained in the file metadata.
 
