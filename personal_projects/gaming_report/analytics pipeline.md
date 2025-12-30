@@ -49,7 +49,7 @@ These two tables are then loaded into Power BI and Merged using the Steam ID.
 
 <img width="2004" height="308" alt="image" src="https://github.com/user-attachments/assets/49417279-97ab-4eb8-a01f-a308c2e90b52" />
 
-using this M code, I create a new column called **Game Label**
+Using the following M script, I create a new column called **Game Label**
 
 ```
 = Table.AddColumn(
@@ -66,10 +66,22 @@ using this M code, I create a new column called **Game Label**
 )
 ```
 
+I also created a new primary key column called **Game GUID**, based on the Steam app ID and the Expansion ID with the following script.
+
+```
+= Table.AddColumn(
+    #"Expanded Expansions Table",
+    "Game GUID",
+    each if [Expansion ID] is null then [Steam ID] else [Expansion ID],
+    type text
+)
+```
+
 The end result in the Combined Games table in Power Query is
 
 <img width="1153" height="226" alt="image" src="https://github.com/user-attachments/assets/d0666b44-64f4-4caf-83a6-f1640e0535c7" />
 
+I am keeping both Package Label and Expansion Label as these can be used to control granularity.
 
 Type 2: Pseudo Collection
 
