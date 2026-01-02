@@ -10,8 +10,6 @@ Languages: Python, T-SQL, M and DAX
 To be added in the future:
 Power BI on-premises data gateway between Power BI Service and SQL Server (maybe?)
 
-[​IMG]
-
 Modelling the gaming industry
 
 Terminologies.
@@ -21,9 +19,14 @@ Package: A package is an item/application sold on Steam with its own App ID. It 
 Collection: Bundle of multiple games sold under one Steam App ID, usually from the same series or developer.
 
 
-## Problem 1: Address the various types of games bundles, editions and collections.
+## Problem 1: The Three levels of aggregation
+
+
+## Problem 1: Address the various types and levels of bundles and editions
 
 A single title can have many DLCs, are these DLCs its own title or should they be classified part of the title? There are many versions (eg Ultimate edition, Gold edition etc) and future remaster of the same title. It can be bundled together as a collection, and different platform may sell different version of the same title etc
+
+
 
 ### Type 1: True Collection (one Steam ID for the collection only)
 
